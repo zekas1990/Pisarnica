@@ -1,0 +1,34 @@
+﻿@model Web_dje.Models.OSOBA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OSOBA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PREZIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PREZIME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OIB }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
