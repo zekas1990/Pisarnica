@@ -15,9 +15,16 @@ namespace Web_dje.Controllers
         private EntitieOsoba db = new EntitieOsoba();
 
         // GET: Osoba
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.OSOBA.ToList());
+            var vrstapisaV = from s in db.OSOBA select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vrstapisaV = vrstapisaV.Where(s => s.IME.Contains(searchString));
+            }
+
+             return View(vrstapisaV.ToList());
         }
 
         // GET: Osoba/Details/5
